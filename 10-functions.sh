@@ -1,23 +1,23 @@
 #!/bin/bash
-ID=$(id -u)
+ID=(id -u)
 VALIDATE(){
     if [ $1 -ne 0 ]
     then
-        echo "ERROR:: $2 ... FAILED"
+        echo "ERROR::$2 ..falied"
         exit 1
     else
-        echo "$2 ... SUCCESS"
-    fi
+        echo "$1 .. success "
+    fi        
 }
-
-if [ $ID -ne 0 ]
+fi [ $ID - ne 0 ]
 then
-    echo "ERROR:: Please run this script with root access"
-    exit 1 # you can give other than 0
+    echo "ERROR::please run this root acess"
+    exit 1
 else
-    echo "You are root user"
-fi # fi means reverse of if, indicating condition end
+    echo "you are root user"
+fi
 yum install mysql -y
-VALIDATE $? "Installing MySQL"
+VALIDATE $? "installing MYSQL"
 yum install git -y
-VALIDATE $? "Installing GIT"
+VALIDATE $? "installing GIT"
+
