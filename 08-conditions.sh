@@ -1,8 +1,8 @@
 #!/bin/bash
-NUMBER=$5
+NUMBER=$50
 if [ $NUMBER -gt 500 ]
 then 
-    echo "Given number is $NUMBER is greaterthen 100"
+    echo "Given number is $NUMBER is greaterthen 500"
 else
-    echo "Given number is $NUMBER is not greaterthen 100" 
+    echo "Given number is $NUMBER is not greaterthen 500" 
 fi       
