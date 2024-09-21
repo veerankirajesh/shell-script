@@ -16,7 +16,7 @@ else
     echo "MYSQL installed success"
 fi    
 yum install git -y
-fi [ $? -ne 0 ]
+if [ $? -ne 0 ]
 then
     echo "ERROR::git installed failed"
     exit 1
