@@ -9,7 +9,7 @@ VALIDATE(){
         echo "$1 .. success "
     fi        
 }
-fi [ $ID - ne 0 ]
+if [ $ID -ne 0 ]
 then
     echo "ERROR::please run this root acess"
     exit 1
