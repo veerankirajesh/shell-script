@@ -1,6 +1,6 @@
 #!/bin/bash
-NUMBER=$1
-if [ $NUMBER -gt 100 ]
+NUMBER=$5
+if [ $NUMBER -gt 500 ]
 then 
     echo "Given number is $NUMBER is greaterthen 100"
 else
