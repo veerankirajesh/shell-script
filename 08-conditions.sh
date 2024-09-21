@@ -1,5 +1,5 @@
 #!/bin/bash
-NUMBER=$98
+NUMBER=$8
 if [ $NUMBER -gt 100 ]
 then 
     echo "Given number is $NUMBER is greaterthen 100"
