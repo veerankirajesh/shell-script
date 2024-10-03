@@ -4,10 +4,10 @@ NAME=""
 WISHES="Good Morning"
 
 USAGE(){
-    echo "USAGE:: $(basename $0) -n <name> -w <wishes>"
-    echo "options::"
-    echo " -n, specify the name (mondatory)"
-    echo " -w, specify the wishes.(optional).Good morning"
+    echo "USGAE:: $(basename $0) -n <name> -w <wishes>"
+    echo "Options::"
+    echo " -n, Specify the name (mandatory)"
+    echo " -w, Specify the wishes. (Optional). Default is Good Morning"
     echo " -h, Display Help and exit"
 }
 
