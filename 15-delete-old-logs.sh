@@ -1,7 +1,6 @@
 #!/bin/bash
 
 SOURCE_DIE="/tmp/shell-script.logs"
-
 R="\e[31m"
 G="e\[32m"
 Y="e\[33m"
