@@ -1,20 +1,21 @@
 #!/bin/bash
 
 DISK_USAGE=$(df -hT | grep -v Filesystem)
-DISK_THRESHOLD=1 # in project it will be 75
+DISK_THRESHOLD=1   # in project use 75
 MSG=""
-IP=$(curl http://3.82.13.129/latest/meta-data/local-ipv4)
+IP=$(curl -s http://169.254.169.254/latest/meta-data/local-ipv4)
 
-while IFS= read line
+while IFS= read -r line
 do
-    USAGE=$(echo $line | awk '{print $6F}' | cut -d "%" -f1)
-    PARTITION=$(echo $line | awk '{print $7F}')
-    if [ $USAGE -ge $DISK_THRESHOLD ]
+    USAGE=$(echo $line | awk '{print $6}' | cut -d "%" -f1)
+    PARTITION=$(echo $line | awk '{print $7}')
+    if [ "$USAGE" -ge "$DISK_THRESHOLD" ]
     then
-        MSG+="High Disk Usage on $PARTITION: $USAGE % <br>" #<br> represents HTML new
+        MSG+="High Disk Usage on $PARTITION: $USAGE % <br>"
     fi
-done <<< $DISK_USAGE
+done <<< "$DISK_USAGE"
 
-#echo -e $MSG
+# Debug check
+# echo -e "$MSG"
 
 sh mail.sh "DevOps Team" "High Disk Usage" "$IP" "$MSG" "rajeshveeranki478@gmail.com" "ALERT-High Disk Usage"
